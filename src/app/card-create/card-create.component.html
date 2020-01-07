@@ -1,0 +1,67 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-card class="mat-card-form">
+  <form [formGroup]="form" (submit)="onSaveCard()" *ngIf="!isLoading">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="name"
+        placeholder="Client Name"
+      />
+      <mat-error *ngIf="form.get('name').invalid">
+        Please enter a Client name.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="mainFeatures"
+        placeholder="Main Features"
+      />
+      <mat-error *ngIf="form.get('mainFeatures').invalid">
+        Please enter feature 1.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="rating"
+        placeholder="Client ratings"
+      />
+      <mat-error *ngIf="form.get('rating').invalid">
+        Please enter client ratings.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="reviews"
+        placeholder="Client review number"
+      />
+      <mat-error *ngIf="form.get('reviews').invalid">
+        Please enter a number of reviews for the client.
+      </mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="warn"
+      type="button"
+      (click)="filePicker.click()"
+    >
+      Pick Image
+    </button>
+    <input type="file" #filePicker (change)="onImagePicked($event)" />
+    <div class="image-preview" *ngIf="imageView && imageView !== ''">
+      <img [src]="imageView" [alt]="form.value.title" />
+    </div>
+    <br />
+    <hr />
+    <button mat-raised-button color="accent" type="submit">Save Post</button>
+  </form>
+</mat-card>

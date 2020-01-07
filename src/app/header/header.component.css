@@ -1,0 +1,68 @@
+.cnl-navbar {
+  text-align: center;
+}
+
+/* .top-page-slider {
+  height: 10%;
+} */
+
+.navbar {
+  /* background-color: rgb(81, 20, 100); */
+  background-color: white;
+  font-style: italic;
+}
+
+.navbar-brand {
+  color: black;
+}
+
+.mat-toolbar {
+  background-color: black;
+}
+
+/* #carouselExampleControls {
+  height: 10%;
+} */
+
+.logo1 {
+  color: azure;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 250;
+  display: inline-block;
+}
+.logo2 {
+  /* text-shadow: 0px 0px 3px red; */
+  color: red;
+  /* font-style: italic; */
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+  display: inline-block;
+}
+
+.dropdown {
+  margin-left: auto;
+  margin-right: 0%;
+  background-color: black;
+  text-decoration: none;
+}
+
+.dropdown-toggle {
+  color: azure;
+  font-size: 0.8rem;
+}
+
+.btn-link {
+  text-decoration: none;
+}
+
+.drop-link {
+  text-decoration: none;
+  color: black;
+  font-size: 0.7rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10%;
+}
+
+.logo-link {
+  text-decoration: none;
+}

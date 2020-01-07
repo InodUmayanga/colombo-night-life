@@ -1,0 +1,88 @@
+/* .client-title {
+  margin: 0 auto;
+} */
+
+.rating-img {
+  height: 1.1rem;
+  width: 1.1rem;
+  display: inline-block;
+  margin-bottom: 1.1rem;
+  margin-right: 0.3rem;
+  margin-top: 0.9rem;
+  margin-left: 5%;
+}
+
+.features-style {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.hr-style {
+  margin-top: 0rem;
+  width: 90%;
+}
+
+.card-details {
+  width: 90%;
+  /* background-color: green; */
+  margin: auto;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.reviews-rating {
+  font-weight: 200;
+  float: right;
+  margin-left: auto;
+  font-size: 1rem;
+}
+
+/* .toolbar-content {
+  align-content: right;
+  margin: auto;
+} */
+
+.details {
+  display: inline-block;
+  margin-bottom: 0rem;
+}
+.link-details {
+  color: rgba(221, 12, 12, 0.849);
+  margin-left: 2.9rem;
+  margin-top: 0rem;
+}
+
+.details-styles {
+  margin-left: 2.9rem;
+  margin-top: 0rem;
+}
+
+.small-text {
+  font-size: 0.8rem;
+  color: black;
+  margin-left: auto;
+}
+
+.agm-map {
+  height: 400px;
+}
+
+.inner-image {
+  height: 10rem;
+  width: 100%;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.8);
+}
+
+.link-container {
+  margin-bottom: 1rem;
+}
+
+.mat-toolbar {
+  background-color: rgb(236, 236, 236);
+  color: black;
+}
+
+.hr-style-special {
+  margin-top: 0rem;
+  width: 100%;
+}

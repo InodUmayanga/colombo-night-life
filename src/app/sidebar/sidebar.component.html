@@ -1,0 +1,100 @@
+<p>sidebar works!</p>
+<!-- Sidebar -->
+<section class="sidebar ignore" [class]="sideStyle">
+  <!-- Sidebar-overlay -->
+  <div (click)="sideClose()" class="black-overlay"></div>
+  <div class="sbar-overlay"></div>
+  <!-- // Sidebar-overlay -->
+
+  <!-- Sidebar content -->
+  <div class="sbar-content">
+    <!-- sidebar header -->
+    <div class="sbar-header">
+      <!-- Sidebar Logo -->
+      <a routerLink="" class="sbar-logo">
+        <i class="sidelogo-icon">
+          <img
+            src="assets/images/icons/white-logo.svg"
+            alt="moneyworkz logo"
+          /> </i
+        >moneyworkz
+      </a>
+      <!-- // Sidebar Logo -->
+
+      <!-- Close sidebar -->
+      <a (click)="sideClose()" class="sbar-close">
+        <span class="icon-close"></span>
+      </a>
+      <!-- // Close sidebar -->
+    </div>
+    <!-- // sidebar header -->
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar-navigation">
+      <ul>
+        <li>
+          <a (click)="sideClose()" routerLink="">Home</a>
+        </li>
+        <li>
+          <a (click)="sideClose()" routerLink="/apply-card/interest"
+            >Apply for a New Card</a
+          >
+        </li>
+        <li>
+          <a (click)="sideClose()" routerLink="/dealhub">DealHub</a>
+        </li>
+        <li>
+          <a (click)="sideClose()" routerLink="/balance-trns/bt-intro"
+            >Switch Card Balance</a
+          >
+        </li>
+        <li>
+          <a (click)="sideClose()" routerLink="/home-loans/interest"
+            >Home / Land Loans</a
+          >
+        </li>
+        <li>
+          <a (click)="sideClose()" routerLink="/vehicle-loans/needs"
+            >Vehicle Loan / Leases</a
+          >
+        </li>
+        <li>
+          <a (click)="sideClose()" routerLink="/lifestyle-loans/needs"
+            >Lifestyle and Emergency Loans</a
+          >
+        </li>
+        <li>
+          <span class="separator"></span>
+        </li>
+        <li>
+          <a (click)="sideClose()" routerLink="/contact-us">Contact Us</a>
+        </li>
+        <li>
+          <a (click)="sideClose()" routerLink="/about-us">About Us</a>
+        </li>
+        <!-- <li>
+          <span class="separator"></span>
+        </li>
+        <li>
+          <a (click)="signOut()">Sign Out</a>
+        </li> -->
+        <li>
+          <span class="separator mb0"></span>
+        </li>
+      </ul>
+    </nav>
+    <!-- // Sidebar Navigation -->
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+      <ul>
+        <li>
+          <a (click)="sideClose()" routerLink="/terms-use">Terms of Use</a>
+        </li>
+      </ul>
+    </div>
+    <!-- // Sidebar Footer -->
+  </div>
+  <!-- //  Sidebar content -->
+</section>
+<!-- // Sidebar -->
