@@ -88,7 +88,7 @@
       <p class="details">Price</p>
       <br />
       <p class="details-styles">
-        Men: 3,500 LKR (reideemable) | Ladies walk in free
+        {{ card?.price }}
       </p>
     </div>
     <hr class="hr-style" />
@@ -100,9 +100,7 @@
       />
       <p class="details">Location</p>
       <br />
-      <a class="link-details" href="https://maps.app.goo.gl/cGiyGmWxCAv3pHS76"
-        >Floor by O! Maitland Cres, Colombo 07</a
-      >
+      <a class="link-details" href="card?.location">{{ card?.address }}</a>
     </div>
 
     <hr class="hr-style" />
@@ -114,9 +112,9 @@
       />
       <p class="details">Call</p>
       <br />
-      <a class="link-details" href="tel:0112676288" data-rel="external"
-        >0112 676 288</a
-      >
+      <a class="link-details" href="{{ telephoneLink }}" data-rel="external">{{
+        card?.telephone
+      }}</a>
     </div>
 
     <hr class="hr-style" />
@@ -128,7 +126,7 @@
       />
       <p class="details">Open Hours</p>
       <br />
-      <p class="details-styles">7.00 pm to 2.00 am</p>
+      <p class="details-styles">{{ card?.openHours }}</p>
     </div>
     <hr class="hr-style" />
     <div>
@@ -139,7 +137,7 @@
       />
       <p class="details">Parking</p>
       <br />
-      <p class="details-styles">Not Available</p>
+      <p class="details-styles">{{ card?.parking }}</p>
     </div>
     <hr class="hr-style" />
     <div>
@@ -150,10 +148,8 @@
       />
       <p class="details">Description</p>
       <br />
-      <p class="details-styles">
-        The Floor by O has an amazing atmosphere. You can either choose to dance
-        away to live music or you can choose to chill near the outdoor pool
-        area. The waiters are very friendly and the service is prompte
+      <p class="details-styles description">
+        {{ card?.description }}
       </p>
     </div>
     <hr class="hr-style" />
@@ -170,5 +166,10 @@
   </div>
 </div>
 <hr class="hr-style" /> -->
+
+    <div class="navbar">
+      <a href="{{ telephoneLink }}">Call Now</a>
+      <a href="card?.location">On Maps</a>
+    </div>
   </div>
 </div>

@@ -86,3 +86,40 @@
   margin-top: 0rem;
   width: 100%;
 }
+.description {
+  margin-right: 10%;
+  margin-bottom: 10%;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 15%;
+  padding-right: 15%;
+  opacity: 0.6;
+  height: 6%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: rgb(24, 24, 24);
+  color: white;
+}
+
+.navbar a.active {
+  color: red;
+}

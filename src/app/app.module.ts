@@ -21,6 +21,9 @@ import { SliderComponent } from './slider/slider.component';
 import { CardCreateComponent } from './card-create/card-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CardViewComponent } from './card-view/card-view.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AdvertiseComponent } from './advertise/advertise.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { CardViewComponent } from './card-view/card-view.component';
     CardListComponent,
     SliderComponent,
     CardCreateComponent,
-    CardViewComponent
+    CardViewComponent,
+    AboutUsComponent,
+    ContactUsComponent,
+    AdvertiseComponent
   ],
   imports: [
     BrowserModule,

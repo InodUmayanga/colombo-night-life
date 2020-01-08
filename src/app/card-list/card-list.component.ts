@@ -30,8 +30,6 @@ export class CardListComponent implements OnInit, OnDestroy {
         this.isLoading = false;
         this.cards = cards;
         console.log('card list', this.cards);
-        // let mainFeatures = cards.
-
       });
   }
 

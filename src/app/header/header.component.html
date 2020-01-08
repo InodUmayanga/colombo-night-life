@@ -12,9 +12,13 @@
       Contact<span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a class="drop-link">Contact us</a></li>
-      <li><a class="drop-link">Advertise</a></li>
-      <li><a class="drop-link">About us</a></li>
+      <li>
+        <a class="drop-link-advertise" [routerLink]="['/advertise']"
+          >Advertise Free</a
+        >
+      </li>
+      <li><a class="drop-link" [routerLink]="['/contact']">Contact us</a></li>
+      <li><a class="drop-link" [routerLink]="['/about']">About us</a></li>
     </ul>
   </div>
 </mat-toolbar>

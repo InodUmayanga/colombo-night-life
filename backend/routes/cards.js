@@ -34,6 +34,13 @@ router.post('', multer({ storage: storage }).single('image'), (req, res, next) =
     mainFeatures: req.body.mainFeatures,
     rating: req.body.rating,
     reviews: req.body.reviews,
+    price: req.body.price,
+    location: req.body.location,
+    address: req.body.address,
+    telephone: req.body.telephone,
+    openHours: req.body.openHours,
+    parking: req.body.parking,
+    description: req.body.description,
     imagePath: url + '/images/' + req.file.filename
   });
   card.save()
@@ -42,8 +49,17 @@ router.post('', multer({ storage: storage }).single('image'), (req, res, next) =
         message: 'card added',
         card: {
           id: createdCard._id,
-          title: createdCard.title,
-          content: createdCard.content,
+          name: createdCard.name,
+          mainFeatures: createdCard.mainFeatures,
+          rating: createdCard.rating,
+          reviews: createdCard.reviews,
+          price: createdCard.price,
+          location: createdCard.location,
+          address: createdCard.address,
+          telephone: createdCard.telephone,
+          openHours: createdCard.openHours,
+          parking: createdCard.parking,
+          description: createdCard.description,
           imagePath: createdCard.imagePath
         }
       });
@@ -51,27 +67,27 @@ router.post('', multer({ storage: storage }).single('image'), (req, res, next) =
     );
 });
 
-router.put('/:id', multer({ storage: storage }).single('image'), (req, res, next) => {
-  let imagePath = req.body.imagePath;
-  if (req.file) {
-    const url = req.protocol + '://' + req.get("host");
-    imagePath = url + '/images/' + req.file.filename;
-  }
+// router.put('/:id', multer({ storage: storage }).single('image'), (req, res, next) => {
+//   let imagePath = req.body.imagePath;
+//   if (req.file) {
+//     const url = req.protocol + '://' + req.get("host");
+//     imagePath = url + '/images/' + req.file.filename;
+//   }
 
-  const card = new Card({
-    _id: req.body.id,
-    title: req.body.title,
-    content: req.body.content,
-    imagePath: imagePath
-  });
-  console.log('updated', card);
+//   const card = new Card({
+//     _id: req.body.id,
+//     title: req.body.title,
+//     content: req.body.content,
+//     imagePath: imagePath
+//   });
+//   console.log('updated', card);
 
-  const filter = { _id: req.params.id }
-  Card.updateOne(filter, card).then(result => {
-    console.log(result);
-    res.status(200).json({ message: 'card successfully updated' });
-  });
-});
+//   const filter = { _id: req.params.id }
+//   Card.updateOne(filter, card).then(result => {
+//     console.log(result);
+//     res.status(200).json({ message: 'card successfully updated' });
+//   });
+// });
 
 router.get('', (req, res, next) => {
   Card.find()

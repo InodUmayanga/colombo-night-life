@@ -26,6 +26,13 @@ export class CardsService {
             mainFeatures: card.mainFeatures,
             rating: card.rating,
             reviews: card.reviews,
+            price: card.price,
+            location: card.location,
+            address: card.address,
+            telephone: card.telephone,
+            openHours: card.openHours,
+            parking: card.parking,
+            description: card.description,
             imagePath: card.imagePath
           };
         });
@@ -42,16 +49,47 @@ export class CardsService {
 
   getCard(id: string) {
     // tslint:disable-next-line: max-line-length
-    return this.http.get<{ _id: string, name: string, mainFeatures: string, rating: string, reviews: string, imagePath: string }>(BACKEND_URL + '/' + id);
+    return this.http.get<{
+      _id: string,
+      name: string,
+      mainFeatures: string,
+      rating: string, reviews: string,
+      price: string,
+      location: string,
+      address: string,
+      telephone: string,
+      openHours: string,
+      parking: string,
+      description: string,
+      imagePath: string
+    }>(BACKEND_URL + '/' + id);
   }
 
-  addCard(name: string, mainFeatures: string, rating: string, reviews: string, image: File) {
+  addCard(
+    name: string,
+    mainFeatures: string,
+    rating: string,
+    reviews: string,
+    price: string,
+    location: string,
+    address: string,
+    telephone: string,
+    openHours: string,
+    parking: string,
+    description: string, image: File) {
 
     const cardData = new FormData();
     cardData.append('name', name);
     cardData.append('mainFeatures', mainFeatures.toString());
     cardData.append('rating', rating);
     cardData.append('reviews', reviews);
+    cardData.append('price', price);
+    cardData.append('location', location);
+    cardData.append('address', address);
+    cardData.append('telephone', telephone);
+    cardData.append('openHours', openHours);
+    cardData.append('parking', parking);
+    cardData.append('description', description);
     cardData.append('image', image, name);
 
     this.http
@@ -63,11 +101,17 @@ export class CardsService {
           mainFeatures,
           rating,
           reviews,
+          price,
+          location: responseData.card.location,
+          address: responseData.card.address,
+          telephone: responseData.card.telephone,
+          openHours: responseData.card.openHours,
+          parking: responseData.card.parking,
+          description: responseData.card.description,
           imagePath: responseData.card.imagePath
         };
         this.cards.push(card);
         this.cardsUpdated.next([...this.cards]);
-        this.router.navigate(['/']);
       });
   }
 

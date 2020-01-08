@@ -18,6 +18,7 @@ export class CardViewComponent implements OnInit {
   card: Card;
   form: FormGroup;
   featuresArray: string[];
+  telephoneLink: string;
 
 
 
@@ -42,10 +43,18 @@ export class CardViewComponent implements OnInit {
             mainFeatures: cardData.mainFeatures,
             rating: cardData.rating,
             reviews: cardData.reviews,
+            price: cardData.price,
+            location: cardData.location,
+            address: cardData.address,
+            telephone: cardData.telephone,
+            openHours: cardData.openHours,
+            parking: cardData.parking,
+            description: cardData.description,
             imagePath: cardData.imagePath
           };
           this.featuresArray = this.card.mainFeatures.split(',');
-          console.log(this.card.name);
+          console.log(this.card);
+          this.telephoneLink = 'tel:' + this.card.telephone;
         });
 
       }

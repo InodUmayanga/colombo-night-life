@@ -37,6 +37,27 @@ export class CardCreateComponent implements OnInit {
       reviews: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(1)]
       }),
+      price: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(3)]
+      }),
+      location: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(5)]
+      }),
+      address: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(5)]
+      }),
+      telephone: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(10)]
+      }),
+      openHours: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(3)]
+      }),
+      parking: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(3)]
+      }),
+      description: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(3)]
+      }),
       image: new FormControl(null)
     });
 
@@ -55,6 +76,13 @@ export class CardCreateComponent implements OnInit {
             mainFeatures: cardData.mainFeatures,
             rating: cardData.rating,
             reviews: cardData.reviews,
+            price: cardData.price,
+            location: cardData.location,
+            address: cardData.address,
+            telephone: cardData.telephone,
+            openHours: cardData.openHours,
+            parking: cardData.parking,
+            description: cardData.description,
             imagePath: cardData.imagePath
           };
           this.form.setValue({
@@ -63,6 +91,13 @@ export class CardCreateComponent implements OnInit {
             mainFeatures: this.card.mainFeatures,
             rating: this.card.rating,
             reviews: this.card.reviews,
+            price: this.card.price,
+            location: this.card.location,
+            address: this.card.address,
+            telephone: this.card.telephone,
+            openHours: this.card.openHours,
+            parking: this.card.parking,
+            description: this.card.description,
             imagePath: this.card.imagePath
           });
         });
@@ -91,7 +126,20 @@ export class CardCreateComponent implements OnInit {
     this.isLoading = true;
     if (this.mode === 'create') {
       // tslint:disable-next-line: max-line-length
-      this.cardsService.addCard(this.form.value.name, this.form.value.mainFeatures, this.form.value.rating, this.form.value.reviews, this.form.value.image);
+      this.cardsService.addCard(
+        this.form.value.name,
+        this.form.value.mainFeatures,
+        this.form.value.rating,
+        this.form.value.reviews,
+        this.form.value.price,
+        this.form.value.location,
+        this.form.value.address,
+        this.form.value.telephone,
+        this.form.value.openHours,
+        this.form.value.parking,
+        this.form.value.description,
+        this.form.value.image
+      );
     }
     // else {
     //   this.cardsService.updatePost(

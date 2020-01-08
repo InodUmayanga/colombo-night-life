@@ -66,3 +66,11 @@
 .logo-link {
   text-decoration: none;
 }
+
+.drop-link-advertise {
+  text-decoration: none;
+  color: red;
+  font-size: 0.7rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10%;
+}
