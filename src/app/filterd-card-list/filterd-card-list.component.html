@@ -1,0 +1,41 @@
+<div class="drawing" id="loading" *ngIf="isLoading">
+  <div class="loading-dot"></div>
+</div>
+<app-filter-bar></app-filter-bar>
+<app-slider *ngIf="!isLoading"></app-slider>
+<!-- <div class="card-container">
+  <div class="card vender-card">
+    <img [src]="imagePath2" class="card-img" alt="image saved" />
+    <div class="card-body">
+      <h5 class="card-title">The Four Leafed Clover</h5>
+      <p>Rooftop bar | Dance Floor | Swimming Pool</p>
+      <img src="assets/images/star.png" class="rating-img" alt="image saved" />
+      4.8 | 350 google reviews
+    </div>
+  </div>
+</div> -->
+<div class="card-container" *ngFor="let card of cards">
+  <a class="card-link" [routerLink]="['/view', card._id]">
+    <div class="card vender-card">
+      <img [src]="card.imagePath" class="card-img" alt="image saved" />
+      <div class="card-body">
+        <h5 class="card-title">{{ card.name }}</h5>
+        <p>
+          {{ card.mainFeatures.split(",")[0] }}
+          <span *ngIf="card.mainFeatures.split(',')[1]">|</span>
+          {{ card.mainFeatures.split(",")[1] }}
+          <span *ngIf="card.mainFeatures.split(',')[2]">|</span>
+          {{ card.mainFeatures.split(",")[2] }}
+        </p>
+        <img
+          src="assets/images/star.png"
+          class="rating-img"
+          alt="image saved"
+        />
+        <p class="features-style">
+          {{ card.rating }} | {{ card.reviews }} reviews
+        </p>
+      </div>
+    </div>
+  </a>
+</div>

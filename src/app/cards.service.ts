@@ -33,7 +33,44 @@ export class CardsService {
             openHours: card.openHours,
             parking: card.parking,
             description: card.description,
+            club: card.club,
+            pub: card.pub,
+            restaurant: card.restaurant,
+            event: card.event,
             imagePath: card.imagePath
+
+          };
+        });
+      }))
+      .subscribe((transformedCards) => {
+        this.cards = transformedCards;
+        this.cardsUpdated.next([...this.cards]);
+      });
+  }
+
+  getFilteredCards(filterAction: string) {
+    this.http
+      .get<{ message: string, cards: any }>(BACKEND_URL + '/filter/' + filterAction).pipe(map((cardData) => {
+        return cardData.cards.map(card => {
+          return {
+            _id: card._id,
+            name: card.name,
+            mainFeatures: card.mainFeatures,
+            rating: card.rating,
+            reviews: card.reviews,
+            price: card.price,
+            location: card.location,
+            address: card.address,
+            telephone: card.telephone,
+            openHours: card.openHours,
+            parking: card.parking,
+            description: card.description,
+            club: card.club,
+            pub: card.pub,
+            restaurant: card.restaurant,
+            event: card.event,
+            imagePath: card.imagePath
+
           };
         });
       }))
@@ -61,6 +98,10 @@ export class CardsService {
       openHours: string,
       parking: string,
       description: string,
+      club: string,
+      pub: string,
+      restaurant: string,
+      event: string,
       imagePath: string
     }>(BACKEND_URL + '/' + id);
   }
@@ -76,8 +117,13 @@ export class CardsService {
     telephone: string,
     openHours: string,
     parking: string,
-    description: string, image: File) {
-
+    description: string,
+    club: string,
+    pub: string,
+    restaurant: string,
+    event: string,
+    image: File
+  ) {
     const cardData = new FormData();
     cardData.append('name', name);
     cardData.append('mainFeatures', mainFeatures.toString());
@@ -90,6 +136,10 @@ export class CardsService {
     cardData.append('openHours', openHours);
     cardData.append('parking', parking);
     cardData.append('description', description);
+    cardData.append('club', club);
+    cardData.append('pub', pub);
+    cardData.append('restaurant', restaurant);
+    cardData.append('event', event);
     cardData.append('image', image, name);
 
     this.http
@@ -108,6 +158,10 @@ export class CardsService {
           openHours: responseData.card.openHours,
           parking: responseData.card.parking,
           description: responseData.card.description,
+          club: responseData.card.club,
+          pub: responseData.card.pub,
+          restaurant: responseData.card.restaurant,
+          event: responseData.card.event,
           imagePath: responseData.card.imagePath
         };
         this.cards.push(card);

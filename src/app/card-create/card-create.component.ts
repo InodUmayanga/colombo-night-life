@@ -58,6 +58,18 @@ export class CardCreateComponent implements OnInit {
       description: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(3)]
       }),
+      club: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(1)]
+      }),
+      pub: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(1)]
+      }),
+      restaurant: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(1)]
+      }),
+      event: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(1)]
+      }),
       image: new FormControl(null)
     });
 
@@ -83,6 +95,10 @@ export class CardCreateComponent implements OnInit {
             openHours: cardData.openHours,
             parking: cardData.parking,
             description: cardData.description,
+            club: cardData.club,
+            pub: cardData.pub,
+            restaurant: cardData.restaurant,
+            event: cardData.event,
             imagePath: cardData.imagePath
           };
           this.form.setValue({
@@ -98,6 +114,10 @@ export class CardCreateComponent implements OnInit {
             openHours: this.card.openHours,
             parking: this.card.parking,
             description: this.card.description,
+            club: this.card.club,
+            pub: this.card.pub,
+            restaurant: this.card.restaurant,
+            event: this.card.event,
             imagePath: this.card.imagePath
           });
         });
@@ -138,6 +158,10 @@ export class CardCreateComponent implements OnInit {
         this.form.value.openHours,
         this.form.value.parking,
         this.form.value.description,
+        this.form.value.club,
+        this.form.value.pub,
+        this.form.value.restaurant,
+        this.form.value.event,
         this.form.value.image
       );
       this.form.reset();

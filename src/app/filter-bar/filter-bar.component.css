@@ -5,13 +5,14 @@
 
 .filter {
   /* margin: 0.1rem; */
-  width: 24%;
+  width: 24.3%;
   margin: 0;
   text-align: center;
   background-color: black;
   color: rgb(160, 160, 160);
   display: inline-block;
   /* height: 1rem; */
+  text-decoration: none;
 }
 
 .filter-restaurants {

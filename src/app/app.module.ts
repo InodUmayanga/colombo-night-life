@@ -25,6 +25,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdvertiseComponent } from './advertise/advertise.component';
 import { FilterBarComponent } from './filter-bar/filter-bar.component';
+import { FilterdCardListComponent } from './filterd-card-list/filterd-card-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FilterBarComponent } from './filter-bar/filter-bar.component';
     AboutUsComponent,
     ContactUsComponent,
     AdvertiseComponent,
-    FilterBarComponent
+    FilterBarComponent,
+    FilterdCardListComponent
   ],
   imports: [
     BrowserModule,

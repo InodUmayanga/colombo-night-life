@@ -132,6 +132,51 @@
       </mat-error>
     </mat-form-field>
 
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="club"
+        placeholder="Client Filter Tag"
+      />
+      <mat-error *ngIf="form.get('club').invalid">
+        Please enter a club for the client.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="pub"
+        placeholder="Client Filter Tag"
+      />
+      <mat-error *ngIf="form.get('pub').invalid">
+        Please enter a pub for the client.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="restaurant"
+        placeholder="Client Filter Tag"
+      />
+      <mat-error *ngIf="form.get('restaurant').invalid">
+        Please enter a restaurant for the client.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="event"
+        placeholder="Client Filter Tag"
+      />
+      <mat-error *ngIf="form.get('event').invalid">
+        Please enter a event Tag for the client.
+      </mat-error>
+    </mat-form-field>
+
     <button
       mat-raised-button
       color="accent"

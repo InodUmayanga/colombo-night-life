@@ -12,6 +12,10 @@ const cardSchema = mongoose.Schema({
   openHours: { type: String, requred: true },
   parking: { type: String, requred: true },
   description: { type: String, requred: true },
+  club: { type: String, requred: true },
+  pub: { type: String, requred: true },
+  restaurant: { type: String, requred: true },
+  event: { type: String, requred: true },
   imagePath: { type: String, requred: true }
 });
 

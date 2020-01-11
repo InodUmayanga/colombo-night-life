@@ -9,7 +9,7 @@ const app = express();
 
 mongoose.connect('mongodb+srv://inod:'
   + process.env.MONGO_ATLAS_PW
-  + '@cluster0-oeodj.mongodb.net/colombo-night-life-deploy-2?retryWrites=true&w=majority')
+  + '@cluster0-oeodj.mongodb.net/colombo-night-life-deploy-3?retryWrites=true&w=majority')
   .then(() => {
     console.log('successfully connected to DB!');
   })

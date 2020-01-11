@@ -8,6 +8,7 @@ import { CardViewComponent } from './card-view/card-view.component';
 import { AdvertiseComponent } from './advertise/advertise.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FilterdCardListComponent } from './filterd-card-list/filterd-card-list.component';
 
 
 
@@ -19,8 +20,7 @@ const routes: Routes = [
   { path: 'advertise', component: AdvertiseComponent },
   { path: 'contact', component: ContactUsComponent },
   { path: 'about', component: AboutUsComponent },
-
-
+  { path: 'filterd/:filterAction', component: FilterdCardListComponent }
 ];
 
 @NgModule({

@@ -50,6 +50,10 @@ export class CardViewComponent implements OnInit {
             openHours: cardData.openHours,
             parking: cardData.parking,
             description: cardData.description,
+            club: cardData.club,
+            pub: cardData.pub,
+            restaurant: cardData.restaurant,
+            event: cardData.event,
             imagePath: cardData.imagePath
           };
           this.featuresArray = this.card.mainFeatures.split(',');

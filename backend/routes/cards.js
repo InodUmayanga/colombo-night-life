@@ -41,6 +41,10 @@ router.post('', multer({ storage: storage }).single('image'), (req, res, next) =
     openHours: req.body.openHours,
     parking: req.body.parking,
     description: req.body.description,
+    club: req.body.club,
+    pub: req.body.pub,
+    restaurant: req.body.restaurant,
+    event: req.body.event,
     imagePath: url + '/images/' + req.file.filename
   });
   card.save()
@@ -60,7 +64,12 @@ router.post('', multer({ storage: storage }).single('image'), (req, res, next) =
           openHours: createdCard.openHours,
           parking: createdCard.parking,
           description: createdCard.description,
+          club: createdCard.club,
+          pub: createdCard.pub,
+          restaurant: createdCard.restaurant,
+          event: createdCard.event,
           imagePath: createdCard.imagePath
+
         }
       });
     }
@@ -120,6 +129,34 @@ router.delete('/:id', (req, res, next) => {
       message: 'cards deleted successfully'
     });
   });
+});
+
+router.get('/filter/:filterAction', (req, res, next) => {
+
+  let filter;
+
+  if (req.params.filterAction === 'clubs') {
+    filter = { club: '1' };
+
+  }
+  if (req.params.filterAction === 'pubs') {
+    filter = { pub: '1' };
+
+  }
+  if (req.params.filterAction === 'restaurants') {
+    filter = { restaurant: '1' };
+
+  }
+  if (req.params.filterAction === 'events') {
+    filter = { event: '1' };
+  }
+  Card.find(filter)
+    .then(documents => {
+      res.status(200).json({
+        message: 'card fetched successfully',
+        cards: documents
+      });
+    });
 });
 
 module.exports = router;

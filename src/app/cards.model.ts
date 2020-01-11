@@ -21,7 +21,9 @@ export interface Card {
   openHours: string;
   parking: string;
   description: string;
+  club: string;
+  pub: string;
+  restaurant: string;
+  event: string;
   imagePath: string;
-  // searchTags: string[];
-  // filterTags: string[];
 }
