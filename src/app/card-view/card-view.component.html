@@ -1,4 +1,7 @@
-<div>
+<div class="drawing" id="loading" *ngIf="isLoading">
+  <div class="loading-dot"></div>
+</div>
+<div *ngIf="!isLoading">
   <div class="top-page-slider">
     <div
       id="carouselExampleControls"
@@ -9,36 +12,8 @@
         <div class="carousel-item active">
           <img
             class="inner-image"
-            src="https://s3.envato.com/files/112954178/01.jpg"
+            src="{{ card?.imagePath }}"
             alt="First slide"
-          />
-        </div>
-        <!-- <div class="carousel-item">
-          <img
-            class="inner-image"
-            src="https://s3.envato.com/files/112954178/02.jpg"
-            alt="Second slide"
-          />
-        </div> -->
-        <!-- <div class="carousel-item">
-          <img
-            class="inner-image"
-            src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/retro-new-year-nightclub-facebook-banner-design-template-b539b686a5342b471e5927b2d88a8d91_screen.jpg?ts=1561428516"
-            alt="Second slide"
-          />
-        </div> -->
-        <!-- <div class="carousel-item">
-          <img
-            class="inner-image"
-            src="http://www.timeline-covers.net/-/pics/vinyl/1341-vinyl-facebook-cover.jpg"
-            alt="Third slide"
-          />
-        </div> -->
-        <div class="carousel-item">
-          <img
-            class="inner-image"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQINS8nMg6UdP9lqs5Usyq00iXNaleBFhKyWlu3HXFX9oGvgUhM&s"
-            alt="Second slide"
           />
         </div>
       </div>
@@ -69,7 +44,7 @@
       <div class="reviews-rating">
         <img src="assets/images/star.png" class="rating-img" alt="rate img" />
         <p class="features-style">
-          {{ card?.rating }} | {{ card?.reviews }} reviews
+          {{ card?.rating }} | {{ card?.reviews }} google reviews
         </p>
       </div>
     </mat-toolbar>
@@ -100,7 +75,9 @@
       />
       <p class="details">Location</p>
       <br />
-      <a class="link-details" href="card?.location">{{ card?.address }}</a>
+      <a class="link-details" href="{{ card?.location }}">{{
+        card?.address
+      }}</a>
     </div>
 
     <hr class="hr-style" />
@@ -169,7 +146,7 @@
 
     <div class="navbar">
       <a href="{{ telephoneLink }}">Call Now</a>
-      <a href="card?.location">On Maps</a>
+      <a href="{{ card?.location }}">On Maps</a>
     </div>
   </div>
 </div>

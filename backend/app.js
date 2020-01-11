@@ -9,7 +9,7 @@ const app = express();
 
 mongoose.connect('mongodb+srv://inod:'
   + process.env.MONGO_ATLAS_PW
-  + '@cluster0-oeodj.mongodb.net/colombo-night-life-03?retryWrites=true&w=majority')
+  + '@cluster0-oeodj.mongodb.net/colombo-night-life-deploy-2?retryWrites=true&w=majority')
   .then(() => {
     console.log('successfully connected to DB!');
   })
@@ -20,7 +20,7 @@ mongoose.connect('mongodb+srv://inod:'
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/images', express.static(path.join("backend/images")));
+app.use('/images', express.static(path.join("images")));
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

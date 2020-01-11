@@ -1,5 +1,7 @@
-<app-slider></app-slider>
-
+<div class="drawing" id="loading" *ngIf="isLoading">
+  <div class="loading-dot"></div>
+</div>
+<app-slider *ngIf="!isLoading"></app-slider>
 <!-- <div class="card-container">
   <div class="card vender-card">
     <img [src]="imagePath2" class="card-img" alt="image saved" />

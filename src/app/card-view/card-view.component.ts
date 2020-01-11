@@ -55,6 +55,7 @@ export class CardViewComponent implements OnInit {
           this.featuresArray = this.card.mainFeatures.split(',');
           console.log(this.card);
           this.telephoneLink = 'tel:' + this.card.telephone;
+          window.scrollTo(0, 0);
         });
 
       }

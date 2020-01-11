@@ -11,6 +11,7 @@
 /node_modules
 /backend/images
 /Template
+/Images to upload
 
 # profiling files
 chrome-profiler-events*.json

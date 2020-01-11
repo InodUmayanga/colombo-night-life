@@ -25,8 +25,8 @@ input[type="file"] {
 }
 
 .mat-card-form {
-  background-color: mediumpurple;
+  /* background-color: rgba(255, 255, 255, 0.52); */
   color: black;
   margin: 2rem;
-  height: 48rem;
+  height: 100%;
 }

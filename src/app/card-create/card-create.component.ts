@@ -140,6 +140,7 @@ export class CardCreateComponent implements OnInit {
         this.form.value.description,
         this.form.value.image
       );
+      this.form.reset();
     }
     // else {
     //   this.cardsService.updatePost(
@@ -150,6 +151,5 @@ export class CardCreateComponent implements OnInit {
     //   );
     // }
 
-    this.form.reset();
   }
 }
