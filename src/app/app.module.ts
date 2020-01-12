@@ -26,6 +26,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdvertiseComponent } from './advertise/advertise.component';
 import { FilterBarComponent } from './filter-bar/filter-bar.component';
 import { FilterdCardListComponent } from './filterd-card-list/filterd-card-list.component';
+import { DesktopComponent } from './desktop/desktop.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { FilterdCardListComponent } from './filterd-card-list/filterd-card-list.
     ContactUsComponent,
     AdvertiseComponent,
     FilterBarComponent,
-    FilterdCardListComponent
+    FilterdCardListComponent,
+    DesktopComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { FilterdCardListComponent } from './filterd-card-list/filterd-card-list.
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgbModule,
     MatInputModule,
     MatCardModule,
     MatButtonModule,

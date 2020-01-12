@@ -9,6 +9,7 @@
   margin: 0;
   text-align: center;
   background-color: black;
+
   color: rgb(160, 160, 160);
   display: inline-block;
   /* height: 1rem; */
@@ -19,6 +20,7 @@
   width: 27%;
   text-align: center;
   background-color: black;
+
   color: rgb(160, 160, 160);
   display: inline-block;
   margin: 0;
@@ -35,6 +37,7 @@
 } */
 
 .filter-background {
-  background-color: black;
+  background-color: rgb(19, 18, 18);
+
   margin: 0%;
 }

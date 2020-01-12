@@ -23,6 +23,7 @@ export class FilterdCardListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.isLoading = true;
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      this.isLoading = true;
       this.filterAction = paramMap.get('filterAction');
       this.cardsService.getFilteredCards(this.filterAction);
     });

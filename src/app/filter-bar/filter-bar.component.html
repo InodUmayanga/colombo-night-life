@@ -1,18 +1,23 @@
 <div class="filter-background">
   <!-- <div class="filter-text">Filters</div> -->
-  <div class="btn-sm filter" [routerLink]="['/filterd', 'clubs']">
+  <div type="button" class="btn-sm filter" [routerLink]="['/filterd', 'clubs']">
     Clubs
   </div>
-  <div class="btn-sm filter" [routerLink]="['/filterd', 'pubs']">
+  <div type="button" class="btn-sm filter" [routerLink]="['/filterd', 'pubs']">
     Pubs
   </div>
   <div
+    type="button"
     class="btn-sm filter-restaurants"
     [routerLink]="['/filterd', 'restaurants']"
   >
     Restaurants
   </div>
-  <div class="btn-sm filter" [routerLink]="['/filterd', 'events']">
+  <div
+    type="button"
+    class="btn-sm filter"
+    [routerLink]="['/filterd', 'events']"
+  >
     Events
   </div>
 </div>
