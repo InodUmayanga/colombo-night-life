@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CardsService } from '../cards.service';
+import { CardsService } from '../../cards.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Card } from '../cards.model';
+import { Card } from '../../cards.model';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 

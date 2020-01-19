@@ -4,6 +4,13 @@
     <div class="logo2">Nightlife</div>
   </a>
   <div class="dropdown">
+    <a
+      class="btn btn-link login-toggle"
+      type="button"
+      [routerLink]="['/login']"
+    >
+      Login<span class="caret"></span>
+    </a>
     <button
       class="btn btn-link dropdown-toggle"
       type="button"
@@ -11,6 +18,7 @@
     >
       Contact<span class="caret"></span>
     </button>
+
     <ul class="dropdown-menu">
       <li>
         <a class="drop-link-advertise" [routerLink]="['/advertise']"

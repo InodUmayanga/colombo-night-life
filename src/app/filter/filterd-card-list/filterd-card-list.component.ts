@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { Card } from '../cards.model';
-import { CardsService } from '../cards.service';
+import { Card } from '../../cards.model';
+import { CardsService } from '../../cards.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({

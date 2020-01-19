@@ -16,18 +16,20 @@ import {
   MatExpansionModule,
   MatProgressSpinnerModule,
 } from '@angular/material';
-import { CardListComponent } from './card-list/card-list.component';
+import { CardListComponent } from './cards/card-list/card-list.component';
 import { SliderComponent } from './slider/slider.component';
-import { CardCreateComponent } from './card-create/card-create.component';
+import { CardCreateComponent } from './cards/card-create/card-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CardViewComponent } from './card-view/card-view.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-import { AdvertiseComponent } from './advertise/advertise.component';
-import { FilterBarComponent } from './filter-bar/filter-bar.component';
-import { FilterdCardListComponent } from './filterd-card-list/filterd-card-list.component';
+import { CardViewComponent } from './cards/card-view/card-view.component';
+import { AboutUsComponent } from './stastc-pages/about-us/about-us.component';
+import { ContactUsComponent } from './stastc-pages/contact-us/contact-us.component';
+import { AdvertiseComponent } from './stastc-pages/advertise/advertise.component';
+import { FilterBarComponent } from './filter/filter-bar/filter-bar.component';
+import { FilterdCardListComponent } from './filter/filterd-card-list/filterd-card-list.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SignupComponent } from './Authentication/signup/signup.component';
+import { SigninComponent } from './Authentication/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AdvertiseComponent,
     FilterBarComponent,
     FilterdCardListComponent,
-    DesktopComponent
+    DesktopComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

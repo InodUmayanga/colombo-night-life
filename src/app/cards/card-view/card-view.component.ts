@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Card } from '../cards.model';
-import { CardsService } from '../cards.service';
+import { Card } from '../../cards.model';
+import { CardsService } from '../../cards.service';
 
 
 
