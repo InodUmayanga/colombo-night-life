@@ -3,7 +3,8 @@ import { Subscription } from 'rxjs';
 
 import { Card } from '../../cards.model';
 import { CardsService } from '../../cards.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-card-list',
@@ -17,7 +18,7 @@ export class CardListComponent implements OnInit, OnDestroy {
   isLoading = false;
   action: string;
   mainFeatures: string[];
-  constructor(public cardsService: CardsService, private route: ActivatedRoute) { }
+  constructor(public cardsService: CardsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     if (this.route.snapshot.url[1]) {
@@ -39,10 +40,18 @@ export class CardListComponent implements OnInit, OnDestroy {
     this.cardsService.deleteCard(id);
   }
 
+  onEdit(cardId: string) {
+    setTimeout(() => {
+      this.router.navigate(['admin/edit', cardId]);
+
+    }, 250);
+  }
+
   ngOnDestroy() {
     this.cardSub.unsubscribe();
   }
 
 }
+          // [routerLink]="['admin/edit', card._id]"
 
 

@@ -1,6 +1,7 @@
 <div class="drawing" id="loading" *ngIf="isLoading">
   <div class="loading-dot"></div>
 </div>
+<app-admin-bar></app-admin-bar>
 <app-filter-bar></app-filter-bar>
 <app-slider *ngIf="!isLoading"></app-slider>
 <!-- <div class="card-container">
@@ -38,11 +39,19 @@
         <button
           style="float: right;"
           *ngIf="action === 'delete'"
-          href=""
           class="btn btn-danger"
+          style="float: right;"
           (click)="onDelete(card._id)"
         >
           Delete
+        </button>
+        <button
+          style="float: right;"
+          class="btn btn-danger"
+          *ngIf="action === 'edit'"
+          (click)="onEdit(card._id)"
+        >
+          Edit
         </button>
       </div>
     </div>

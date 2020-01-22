@@ -19,6 +19,8 @@ const routes: Routes = [
   { path: '', component: CardListComponent },
   { path: 'admin/create', component: CardCreateComponent },
   { path: 'admin/delete', component: CardListComponent },
+  { path: 'admin/edit', component: CardListComponent },
+  { path: 'admin/edit/:cardId', component: CardCreateComponent },
   { path: 'view/:cardId', component: CardViewComponent },
   { path: 'advertise', component: AdvertiseComponent },
   { path: 'contact', component: ContactUsComponent },
@@ -27,9 +29,6 @@ const routes: Routes = [
   { path: 'desktop', component: DesktopComponent },
   { path: 'login', component: SigninComponent },
   { path: 'signup', component: SignupComponent }
-
-
-
 ];
 
 @NgModule({

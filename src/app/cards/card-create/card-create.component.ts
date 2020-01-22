@@ -82,6 +82,7 @@ export class CardCreateComponent implements OnInit {
 
         this.cardsService.getCard(this.cardId).subscribe(cardData => {
           this.isLoading = false;
+          console.log(cardData);
           this.card = {
             _id: cardData._id,
             name: cardData.name,
@@ -102,7 +103,6 @@ export class CardCreateComponent implements OnInit {
             imagePath: cardData.imagePath
           };
           this.form.setValue({
-            _id: this.card._id,
             name: this.card.name,
             mainFeatures: this.card.mainFeatures,
             rating: this.card.rating,
@@ -118,7 +118,7 @@ export class CardCreateComponent implements OnInit {
             pub: this.card.pub,
             restaurant: this.card.restaurant,
             event: this.card.event,
-            imagePath: this.card.imagePath
+            image: this.card.imagePath
           });
         });
       } else {
@@ -145,7 +145,6 @@ export class CardCreateComponent implements OnInit {
     }
     this.isLoading = true;
     if (this.mode === 'create') {
-      // tslint:disable-next-line: max-line-length
       this.cardsService.addCard(
         this.form.value.name,
         this.form.value.mainFeatures,
@@ -165,15 +164,27 @@ export class CardCreateComponent implements OnInit {
         this.form.value.image
       );
       this.form.reset();
+    } else {
+      this.cardsService.updateCard(
+        this.cardId,
+        this.form.value.name,
+        this.form.value.mainFeatures,
+        this.form.value.rating,
+        this.form.value.reviews,
+        this.form.value.price,
+        this.form.value.location,
+        this.form.value.address,
+        this.form.value.telephone,
+        this.form.value.openHours,
+        this.form.value.parking,
+        this.form.value.description,
+        this.form.value.club,
+        this.form.value.pub,
+        this.form.value.restaurant,
+        this.form.value.event,
+        this.form.value.image
+      );
     }
-    // else {
-    //   this.cardsService.updatePost(
-    //     this.postId,
-    //     this.form.value.title,
-    //     this.form.value.content,
-    //     this.form.value.image
-    //   );
-    // }
 
   }
 }

@@ -1,0 +1,12 @@
+<div *ngIf="admin" class="filter-background">
+  <!-- <div class="filter-text">Filters</div> -->
+  <div type="button" class="btn-sm filter" [routerLink]="['/admin/create']">
+    Create Card
+  </div>
+  <div type="button" class="btn-sm filter" [routerLink]="['/admin/edit']">
+    Edit Card
+  </div>
+  <div type="button" class="btn-sm filter" [routerLink]="['/admin/delete']">
+    Delete Card
+  </div>
+</div>

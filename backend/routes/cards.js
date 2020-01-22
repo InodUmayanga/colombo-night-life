@@ -69,34 +69,50 @@ router.post('', multer({ storage: storage }).single('image'), (req, res, next) =
           restaurant: createdCard.restaurant,
           event: createdCard.event,
           imagePath: createdCard.imagePath
-
         }
       });
     }
     );
 });
 
-// router.put('/:id', multer({ storage: storage }).single('image'), (req, res, next) => {
-//   let imagePath = req.body.imagePath;
-//   if (req.file) {
-//     const url = req.protocol + '://' + req.get("host");
-//     imagePath = url + '/images/' + req.file.filename;
-//   }
+router.put('/:id', multer({ storage: storage }).single('image'), (req, res, next) => {
+  let imagePath = req.body.imagePath;
+  if (req.file) {
+    const url = req.protocol + '://' + req.get("host");
+    imagePath = url + '/images/' + req.file.filename;
+  }
 
-//   const card = new Card({
-//     _id: req.body.id,
-//     title: req.body.title,
-//     content: req.body.content,
-//     imagePath: imagePath
-//   });
-//   console.log('updated', card);
+  const card = new Card({
+    _id: req.body.id,
+    name: req.body.name,
+    mainFeatures: req.body.mainFeatures,
+    rating: req.body.rating,
+    reviews: req.body.reviews,
+    price: req.body.price,
+    location: req.body.location,
+    address: req.body.address,
+    telephone: req.body.telephone,
+    openHours: req.body.openHours,
+    parking: req.body.parking,
+    description: req.body.description,
+    club: req.body.club,
+    pub: req.body.pub,
+    restaurant: req.body.restaurant,
+    event: req.body.event,
+    imagePath: imagePath
+  });
+  // console.log('id of hthe card:', req.params.id);
 
-//   const filter = { _id: req.params.id }
-//   Card.updateOne(filter, card).then(result => {
-//     console.log(result);
-//     res.status(200).json({ message: 'card successfully updated' });
-//   });
-// });
+  const filter = { _id: req.params.id }
+  Card.updateOne(filter, card).then(result => {
+    console.log('updated', result);
+
+    res.status(200).json({
+      message: 'card successfully updated',
+      result: result
+    });
+  });
+});
 
 router.get('', (req, res, next) => {
   Card.find()

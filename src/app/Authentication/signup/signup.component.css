@@ -1,0 +1,23 @@
+mat-card {
+  background-color: black;
+  color: white;
+  /* align-content: center;
+  align-items: center;
+  align-self: center; */
+  padding: auto;
+}
+
+.back-page {
+  background-color: black;
+  height: 90rem;
+  width: 100%;
+  margin: 0rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.signup {
+  margin-left: 2rem;
+}

@@ -1,0 +1,47 @@
+/* .toolbar-content {
+  height: 1rem;
+  font-size: small;
+} */
+
+.filter {
+  /* margin: 0.1rem; */
+  width: 33%;
+  margin: 0;
+  text-align: center;
+  background-color: black;
+
+  color: rgb(160, 160, 160);
+  display: inline-block;
+  /* height: 1rem; */
+  text-decoration: none;
+}
+
+.btn-sm {
+  background-color: black;
+}
+
+/* .filter-restaurants {
+  width: 27%;
+  text-align: center;
+  background-color: black;
+
+  color: rgb(160, 160, 160);
+  display: inline-block;
+  margin: 0;
+} */
+
+/* .filter-text {
+  width: 19%;
+  text-align: center;
+  background-color: black;
+  color: rgb(160, 160, 160);
+  display: inline-block;
+  padding-top: 0%;
+  margin-top: 0%;
+} */
+
+.filter-background {
+  background-color: rgb(19, 18, 18);
+
+  margin: 0%;
+}

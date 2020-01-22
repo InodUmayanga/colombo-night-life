@@ -50,6 +50,7 @@
   color: azure;
   font-size: 0.8rem;
   float: right;
+  margin-top: 0.2rem;
   /* padding-left: 0rem; */
 }
 
@@ -81,6 +82,9 @@
   color: azure;
   font-size: 0.8rem;
   padding-right: 0rem;
+  background-color: black;
+  margin-left: 0.4rem;
+  margin-top: 0rem;
 }
 
 .toolbar-content {

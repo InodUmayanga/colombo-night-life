@@ -4,12 +4,14 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 const cardsRoutes = require('./routes/cards');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 
 mongoose.connect('mongodb+srv://inod:'
   + process.env.MONGO_ATLAS_PW
   + '@cluster0-oeodj.mongodb.net/colombo-night-life-deploy-3?retryWrites=true&w=majority')
+  // + '@cluster0-oeodj.mongodb.net/colombo-night-life-new-2?retryWrites=true&w=majority')
   .then(() => {
     console.log('successfully connected to DB!');
   })
@@ -35,5 +37,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/cards', cardsRoutes);
+app.use('/api/auth', authRoutes);
+
 
 module.exports = app;

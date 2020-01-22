@@ -169,39 +169,98 @@ export class CardsService {
       });
   }
 
-  updatePost(id: string, title: string, content: string, image: File | string) {
-    // let postData: Post | FormData;
-    // if (typeof (image) === 'object') {
-    //   postData = new FormData();
-    //   postData.append('id', id);
-    //   postData.append('title', title);
-    //   postData.append('content', content);
-    //   postData.append('image', image, title);
+  updateCard(
+    id: string,
+    name: string,
+    mainFeatures: string,
+    rating: string,
+    reviews: string,
+    price: string,
+    location: string,
+    address: string,
+    telephone: string,
+    openHours: string,
+    parking: string,
+    description: string,
+    club: string,
+    pub: string,
+    restaurant: string,
+    event: string,
+    image: File
+  ) {
+    console.log('id for update:', id);
 
-    // } else {
-    //   postData = {
-    //     id,
-    //     title,
-    //     content,
-    //     imagePath: image
-    //   };
-    // }
+    let cardData: Card | FormData;
+    if (typeof (image) === 'object') {
+      cardData = new FormData();
+      cardData.append('id', id);
+      cardData.append('name', name);
+      cardData.append('mainFeatures', mainFeatures.toString());
+      cardData.append('rating', rating);
+      cardData.append('reviews', reviews);
+      cardData.append('price', price);
+      cardData.append('location', location);
+      cardData.append('address', address);
+      cardData.append('telephone', telephone);
+      cardData.append('openHours', openHours);
+      cardData.append('parking', parking);
+      cardData.append('description', description);
+      cardData.append('club', club);
+      cardData.append('pub', pub);
+      cardData.append('restaurant', restaurant);
+      cardData.append('event', event);
+      cardData.append('image', image, name);
 
-    // this.http.put(BACKEND_URL + '/' + id, postData)
-    //   .subscribe(response => {
-    //     const updatedPosts = [...this.posts];
-    //     const oldPostIndex = updatedPosts.findIndex(p => p.id === id);
-    //     const post: Post = {
-    //       id,
-    //       title,
-    //       content,
-    //       imagePath: 'response.imagePath'
-    //     };
-    //     updatedPosts[oldPostIndex] = post;
-    //     this.posts = updatedPosts;
-    //     this.postsUpdated.next([...this.posts]);
-    //     this.router.navigate(['/']);
-    //   });
+    } else {
+      cardData = {
+        _id: id,
+        name,
+        mainFeatures,
+        rating,
+        reviews,
+        price,
+        location,
+        address,
+        telephone,
+        openHours,
+        parking,
+        description,
+        club,
+        pub,
+        restaurant,
+        event,
+        imagePath: image
+      };
+    }
+
+    this.http.put(BACKEND_URL + '/' + id, cardData)
+      .subscribe(response => {
+        const updatedCards = [...this.cards];
+        const oldCardIndex = updatedCards.findIndex(p => p._id === id);
+        const card: Card = {
+          _id: id,
+          name,
+          mainFeatures,
+          rating,
+          reviews,
+          price,
+          location,
+          address,
+          telephone,
+          openHours,
+          parking,
+          description,
+          club,
+          pub,
+          restaurant,
+          event,
+          imagePath: 'response.imagePath'
+        };
+        updatedCards[oldCardIndex] = card;
+        this.cards = updatedCards;
+        this.cardsUpdated.next([...this.cards]);
+        this.router.navigate(['/']);
+      });
   }
 
   deleteCard(cardId: string) {
